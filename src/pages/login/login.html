@@ -14,5 +14,15 @@
 
 
 <ion-content padding>
-
+  <button ion-button block (click)="googleLogin()" *ngIf="!userProfile">
+    GOOGLE LOGIN
+  </button>
+  
+  <ion-card *ngIf="userProfile">
+    <ion-card-header>
+      {{ userProfile.email }}
+    </ion-card-header>
+    <ion-card-content>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
