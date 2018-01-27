@@ -9,8 +9,9 @@
   
   <ion-spinner name="bubbles"></ion-spinner>
   <ion-content padding>
-    <h2>Welcome Explorer!</h2>
-  
+      <div *ngIf="user_name">
+              <h2>Welcome {{user_name}}!</h2>
+      </div>
       <ion-row>
         <ion-col text-center>
           <ion-item id="round">

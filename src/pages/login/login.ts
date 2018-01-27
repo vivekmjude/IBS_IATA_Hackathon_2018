@@ -60,9 +60,9 @@ export class LoginPage {
       });
     });
   }
-  logout(){
-    console.log("KK");
-    return firebase.auth().signOut();
-  }
+  // logout(){
+  //   console.log("KK");
+  //   return firebase.auth().signOut();
+  // }
 
 }
