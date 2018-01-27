@@ -8,17 +8,27 @@
 <ion-content padding>
   <h2>Welcome Explorer!</h2>
 
-  <button ion-button ion-only color="red" round>
-  	Start Exploring! &nbsp;
-  	 <ion-icon name="star"></ion-icon>
-  </button>
+	  <ion-row>
+	  	<ion-col text-center>
+	  		<ion-item id="round">
+				<ion-input type="text" placeholder="Location" value="" autocomplete="on"></ion-input>
+			</ion-item>
+	  	</ion-col>
+	  </ion-row>
 	
-	<ion-item id="round">
-		<ion-input ion-outline type="text" placeholder="Location" value="" autocomplete="on"></ion-input>
-	</ion-item>
+	
+	<ion-row class="row">
+		<ion-col text-center>
+			<button ion-button ion-only color="red" round>
+		  	Start Exploring! &nbsp;
+		  	 <ion-icon name="star"></ion-icon>
+		    </button>
+		</ion-col>
+	</ion-row>
 	
 	
   <p>
    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi odit, placeat doloribus corrupti dolorem magnam possimus ipsa repudiandae tenetur, neque incidunt esse magni vel numquam libero maxime. Dolor, itaque, nostrum.
   </p>
+
 </ion-content>
