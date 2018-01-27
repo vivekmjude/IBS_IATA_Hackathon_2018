@@ -13,8 +13,8 @@ export class MainPage {
 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
-  start = 'chicago, il';
-  end = 'chicago, il';
+  start = 'napier museum';
+  end = 'sastamangalam';
   directionsService = new google.maps.DirectionsService;
   directionsDisplay = new google.maps.DirectionsRenderer;
 
@@ -28,8 +28,9 @@ export class MainPage {
 
   initMap() {
     this.map = new google.maps.Map(this.mapElement.nativeElement, {
-      zoom: 7,
-      center: {lat: 41.85, lng: -87.65}
+      zoom: 100,
+      center: {lat: 8.5090, lng: 76.9552}
+
     });
 
     this.directionsDisplay.setMap(this.map);
@@ -39,7 +40,7 @@ export class MainPage {
     this.directionsService.route({
       origin: this.start,
       destination: this.end,
-      travelMode: 'DRIVING'
+      travelMode: 'WALKING'
     }, (response, status) => {
       if (status === 'OK') {
         this.directionsDisplay.setDirections(response);
