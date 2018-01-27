@@ -20,9 +20,11 @@
   
   <ion-card *ngIf="userProfile">
     <ion-card-header>
-      {{ userProfile.email }}
+      {{ userProfile.displayName }}
     </ion-card-header>
     <ion-card-content>
+        <button ion-button block [navPush]="pushPage" [navParams]="params">Go</button>
+        <!-- <button ion-button block color="danger" (click)="logout()">Logout</button> -->
     </ion-card-content>
   </ion-card>
 </ion-content>

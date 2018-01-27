@@ -1,12 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav,Platform } from 'ionic-angular';
+import { Nav,Platform} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AboutPage } from './../pages/about/about';
 import { HomePage } from './../pages/home/home';
 import { MainPage } from './../pages/main/main';
 import { LoginPage } from './../pages/login/login';
-
+import firebase from 'firebase';
 @Component({
   templateUrl: 'app.html'
 })
@@ -28,7 +28,18 @@ export class MyApp {
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    this.initializeApp();
+    firebase.initializeApp(
+      {
+        apiKey: "AIzaSyBJi8_E3h8p-8TkbVWIw8BZYsI9e8mCt0c",
+        authDomain: "fir-2f2ca.firebaseapp.com",
+        databaseURL: "https://fir-2f2ca.firebaseio.com",
+        projectId: "fir-2f2ca",
+        storageBucket: "fir-2f2ca.appspot.com",
+        messagingSenderId: "714684655335"
+    
+    
+      }
+    );
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -36,15 +47,11 @@ export class MyApp {
       { title: 'Main', component: MainPage },
       { title: 'About', component: AboutPage }
     ];
-
-  }
-
-  initializeApp() {
-    this.platform.ready().then(() => {
+    platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      statusBar.styleDefault();
+      splashScreen.hide();
     });
   }
 
@@ -53,4 +60,4 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
-}
+ }

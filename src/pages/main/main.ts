@@ -28,7 +28,7 @@ export class MainPage {
 
   initMap() {
     this.map = new google.maps.Map(this.mapElement.nativeElement, {
-      zoom: 100,
+      zoom: 15,
       center: {lat: 8.5090, lng: 76.9552}
 
     });
