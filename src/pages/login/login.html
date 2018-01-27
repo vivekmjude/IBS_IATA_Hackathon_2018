@@ -20,9 +20,6 @@
     Login with Google   
   </button>
   <ion-card *ngIf="userProfile">
-    <div class="card-title">
-      {{ userProfile.displayName }}
-    </div>
     <ion-card-content>
         <button ion-button block [navPush]="pushPage" [navParams]="params">Go</button>
         <!-- <button ion-button block color="danger" (click)="logout()">Logout</button> -->
