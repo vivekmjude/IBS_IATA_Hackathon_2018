@@ -54,6 +54,10 @@ export class LoginPage {
         // The signed-in user info.
         var user = result.user;
         console.log(token, user);
+        this.userProfile = user;
+        this.pushPage = HomePage;
+        this.params = { name: this.userProfile.displayName};
+        console.log("Ivide vannu"+this.userProfile.displayName);
       }).catch(function(error) {
         // Handle Errors here.
         console.log(error.message);

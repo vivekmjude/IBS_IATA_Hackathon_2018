@@ -14,14 +14,15 @@
 
 
 <ion-content padding>
-  <button ion-button block (click)="googleLogin()" *ngIf="!userProfile">
-    GOOGLE LOGIN
+  <img src="http://www.lingofacts.com/wp-content/uploads/2017/03/infinity-symbol-1280x640.png">
+  <button ion-button block icon-only color="danger" outline (click)="googleLogin()" *ngIf="!userProfile">
+    <ion-icon name="logo-google"></ion-icon>
+    Login with Google   
   </button>
-  
   <ion-card *ngIf="userProfile">
-    <ion-card-header>
+    <div class="card-title">
       {{ userProfile.displayName }}
-    </ion-card-header>
+    </div>
     <ion-card-content>
         <button ion-button block [navPush]="pushPage" [navParams]="params">Go</button>
         <!-- <button ion-button block color="danger" (click)="logout()">Logout</button> -->
