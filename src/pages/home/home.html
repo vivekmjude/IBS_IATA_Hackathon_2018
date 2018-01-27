@@ -1,10 +1,10 @@
 <ion-header>
     <ion-navbar color="primary" hideBackButton="true">
         <div *ngIf="user_name">
-            <h2>Welcome {{user_name}}!</h2> 
+            <ion-title>Welcome {{user_name}}!</ion-title> 
          </div>
          <div *ngIf="!user_name">
-            <h2>Home</h2>
+            <ion-title>Home</ion-title>
     </div>
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
