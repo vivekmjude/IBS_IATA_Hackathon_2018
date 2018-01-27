@@ -1,3 +1,4 @@
+import { LoginPage } from './../pages/login/login';
 import { MainPage } from './../pages/main/main';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,6 +19,7 @@ import { Geolocation } from '@ionic-native/geolocation';
     AboutPage,
     HomePage,
     MainPage,
+    LoginPage,
     TabsPage
   ],
   imports: [
@@ -29,6 +31,7 @@ import { Geolocation } from '@ionic-native/geolocation';
     MyApp,
     AboutPage,
     HomePage,
+    LoginPage,
     MainPage,
     TabsPage
   ],
