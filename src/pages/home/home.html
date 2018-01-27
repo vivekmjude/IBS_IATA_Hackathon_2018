@@ -1,6 +1,11 @@
 <ion-header>
     <ion-navbar color="primary" hideBackButton="true">
-      <ion-title>Home</ion-title>
+        <div *ngIf="user_name">
+            <h2>Welcome {{user_name}}!</h2> 
+         </div>
+         <div *ngIf="!user_name">
+            <h2>Home</h2>
+    </div>
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
         </button>
@@ -9,9 +14,6 @@
   
   <ion-spinner name="bubbles"></ion-spinner>
   <ion-content padding>
-      <div *ngIf="user_name">
-              <h2>Welcome {{user_name}}!</h2>
-      </div>
       <ion-row>
         <ion-col text-center>
           <ion-item id="round">
