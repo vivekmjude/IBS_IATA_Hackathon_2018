@@ -12,6 +12,7 @@ import  {GoogleMaps} from '@ionic-native/google-maps';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Geolocation } from '@ionic-native/geolocation';
+import { AutocompletePage } from '../pages/home/AutocompletePage';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     HomePage,
     MainPage,
     LoginPage,
-    TabsPage
+    TabsPage,
+    AutocompletePage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     HomePage,
     LoginPage,
     MainPage,
-    TabsPage
+    TabsPage,
+    AutocompletePage
   ],
   providers: [
     StatusBar,

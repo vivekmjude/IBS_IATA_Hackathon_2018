@@ -14,11 +14,11 @@
       </div>
       <ion-row>
         <ion-col text-center>
-          <ion-item id="round">
-  
-          <ion-label floating>Location</ion-label>
-          <ion-input type="text" floating value="" autocomplete="on"></ion-input>
-        </ion-item>
+          <ion-list>
+            <ion-item>
+              <ion-input (click)="showAddressModal()" [(ngModel)]="address.place"type="text" placeholder="Pick an address">              </ion-input>
+            </ion-item>
+          </ion-list>
         </ion-col>
       </ion-row>
     
@@ -27,6 +27,12 @@
       <ion-col text-center>
         <button ion-button ion-only color="red" round>
           Start Exploring &nbsp;
+           <ion-icon name="ios-arrow-forward"></ion-icon>
+          </button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button ion-only color="red" round>
+          Nearby Trails &nbsp;
            <ion-icon name="ios-arrow-forward"></ion-icon>
           </button>
       </ion-col>
