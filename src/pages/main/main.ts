@@ -1,6 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 declare var google;
 
@@ -10,26 +9,31 @@ declare var google;
   templateUrl: 'main.html'
 })
 export class MainPage {
-
+  
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   start = 'napier museum';
   end = 'sastamangalam';
   directionsService = new google.maps.DirectionsService;
   directionsDisplay = new google.maps.DirectionsRenderer;
-
-  constructor(public navCtrl: NavController) {
-
+   public firstParam;
+  public secondParam;
+  constructor(public navCtrl: NavController, public navParams: NavParams){
+ 
+    this.firstParam = navParams.get("firstPassed");
+    this.secondParam = navParams.get("secondPassed");
+   //alert(this.firstParam);
   }
 
   ionViewDidLoad(){
     this.initMap();
   }
 
+
   initMap() {
     this.map = new google.maps.Map(this.mapElement.nativeElement, {
       zoom: 15,
-      center: {lat: 8.5090, lng: 76.9552}
+      center: {lat: this.firstParam, lng: this.secondParam}
 
     });
 

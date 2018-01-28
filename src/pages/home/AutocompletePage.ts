@@ -1,6 +1,8 @@
 import {Component, NgZone} from '@angular/core';
 import {ViewController} from 'ionic-angular';
 import {GoogleMap,GoogleMapsEvent} from '@ionic-native/google-maps';
+import { NavController} from 'ionic-angular'; 
+import { MainPage } from '../main/main';
 declare var google; 
 
   @Component({
@@ -17,7 +19,7 @@ export class AutocompletePage {
 
   service = new google.maps.places.AutocompleteService();
 
-  constructor (public viewCtrl: ViewController, private zone: NgZone) {
+  constructor (public navCtrl: NavController, public viewCtrl: ViewController, private zone: NgZone) {
     this.autocompleteItems = [];
     this.autocomplete = {
       query: ''
@@ -56,7 +58,11 @@ export class AutocompletePage {
     geocoder.geocode({ 'address': address }, (results, status) => {
     this.latitude = results[0].geometry.location.lat();
     this.longitude = results[0].geometry.location.lng();
-    alert("lat: " + this.latitude + ", long: " + this.longitude);
+    //alert("lat: " + this.latitude + ", long: " + this.longitude);
+    this.navCtrl.push(MainPage, {
+    firstPassed: this.latitude,
+      secondPassed: this.longitude
+});
    });
  }
 }
